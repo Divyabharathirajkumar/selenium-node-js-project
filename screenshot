@@ -1,0 +1,51 @@
+catch (err) {
+        console.log("Error occurred", err);
+        await driver.sleep(5000); 
+
+        let screenshot = await driver.takeScreenshot();
+        const screenshotPath = path.join(__dirname, 'error_screenshot.png');
+        fs.writeFileSync(screenshotPath, screenshot, 'base64');
+        console.log(`Screenshot saved at: ${screenshotPath}`);
+
+    }
+
+    // const today = new Date();
+        // const targetDate = new Date(today);
+        // targetDate.setDate(today.getDate() + 4);
+        // const targetDay = targetDate.getDate();
+        // console.log(`Target day to select: ${targetDay}`);
+
+
+        // let dateField = await driver.wait(until.elementLocated(By.xpath("//label[@for='departure']")), 10000);
+        // await driver.wait(until.elementIsVisible(dateField), 5000);
+        // await driver.executeScript("arguments[0].click();", dateField);
+        // console.log("Opened the calendar");
+
+        // let calendarMonth = await driver.findElement(By.xpath('//div[contains(@class,"DayPicker-Month")]'));
+        // let allDates = await calendarMonth.findElements(By.xpath('.//div[contains(@class,"DayPicker-Day")]'));
+
+
+        // for (let dateElement of allDates) {
+        //     let dateText = await dateElement.getText(); 
+        //     if (parseInt(dateText) === targetDay) {
+        //         let classAttr = await dateElement.getAttribute("class");
+        //         if (!classAttr.includes("disabled")) { 
+        //             await driver.executeScript("arguments[0].click();", dateElement);
+        //             console.log("Selected the dynamic date: " + targetDay);
+        //             break;
+        //         }
+        //     }
+        // }
+        // let dateField = await driver.wait(until.elementLocated(By.xpath("//label[@for='departure']")), 10000);
+        // await driver.wait(until.elementIsVisible(dateField), 5000);
+        // await driver.executeScript("arguments[0].click();", dateField);
+        // console.log("Clicked on date");
+
+        // let dateToSelect = await driver.wait(until.elementLocated(By.xpath("//div[@aria-label='Mon Jun 30 2025']")), 10000);
+        // await driver.wait(until.elementIsVisible(dateToSelect), 5000);
+        // await driver.executeScript("arguments[0].click();", dateToSelect);
+        // console.log("Selected the date");
+
+        // let datesToBeSelected = await driver.findElements(By.xpath('//div[@class="DayPicker-Month"][1]//div[@class="DayPicker-Body"]//div[@class="DayPicker-Week"]'));
+        // let today_date_index = await dateToSelect[i].findElement("//div[contains(@class,'--today')]")
+
